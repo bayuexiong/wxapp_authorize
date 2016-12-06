@@ -6,12 +6,12 @@
  * Time: 17:00
  */
 
-namespace Wxapp\Authorize\Wechat\Util;
+namespace Wxapp\Wechat\Util;
 
 
 /**
  * Class Http
- * @package Wxapp\Authorize\Wechat\Util
+ * @package Wxapp\Wechat\Util
  */
 class Http
 {

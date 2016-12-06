@@ -6,16 +6,14 @@
  * Time: 16:59
  */
 
-namespace Wxapp\Authorize\Wechat;
+namespace Wxapp\Wechat;
 
-use Wxapp\Authorize\Wechat\Util\Http;
+use Wxapp\Wechat\Util\Http;
 use Wxapp\Wechat\Encrypt\ErrorCode;
-use Wxapp\Wechat\Exception;
-use Wxapp\Wechat\User;
 
 /**
  * Class Auth
- * @package Wxapp\Authorize\Wechat
+ * @package Wxapp\Wechat
  */
 class Auth
 {
