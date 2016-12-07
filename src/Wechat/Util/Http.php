@@ -67,10 +67,11 @@ class Http
      * @param $url
      * @param array $param
      * @param array $option
+     * @return object
      */
     public function get($url, $param = array(), $option = array())
     {
-        $this->request($url, self::GET, $param, $option);
+        return $this->request($url, self::GET, $param, $option);
     }
 
     /**
@@ -89,10 +90,11 @@ class Http
      * @param $url
      * @param array $param
      * @param array $option
+     * @return object
      */
     public function post($url, $param = array(), $option = array())
     {
-        $this->request($url, self::GET, $param, $option);
+        return $this->request($url, self::GET, $param, $option);
     }
 
 }
