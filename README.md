@@ -30,17 +30,17 @@ try {
 
 ```
 $session_key = '';
-   $encrypt_data = '';
-   $iv = '';
+$encrypt_data = '';
+$iv = '';
 
-   $user = new User($app_id, $app_secret);
-   try {
-       $info = $user->decode($session_key, $encrypt_data, $iv);
-       $open_id = $info['openId'];
-       $union_id = $info['unionId'];
-   } catch (Exception $e) {
-       var_dump($e);
-   }
+$user = new User($app_id, $app_secret);
+try {
+    $info = $user->decode($session_key, $encrypt_data, $iv);
+    $open_id = $info['openId'];
+    $union_id = $info['unionId'];
+  catch (Exception $e) {
+    var_dump($e);
+
 ```
 
 

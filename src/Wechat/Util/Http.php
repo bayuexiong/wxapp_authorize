@@ -51,6 +51,7 @@ class Http
      */
     public function __construct()
     {
+        $this->curl = curl_init();
     }
 
     /**
@@ -83,7 +84,19 @@ class Http
      */
     public function request($url, $method, $param, $option)
     {
-        return \Requests::request($url, $this->header, $param, $method, $option);
+        $param = $param ? http_parse_params($param) : '';
+        switch ($method) {
+            case self::GET:
+                $param && $url .= "?{$param}";
+                break;
+            case self::POST:
+                curl_setopt($this->curl, CURLOPT_POST, 1);
+                curl_setopt($this->curl, CURLOPT_POSTFIELDS, $param);
+                break;
+        }
+        curl_setopt($this->curl, CURLOPT_URL, $url);
+        curl_setopt($this->curl, CURLOPT_HEADER, 0);
+        return curl_exec($this->curl);
     }
 
     /**
@@ -95,6 +108,11 @@ class Http
     public function post($url, $param = array(), $option = array())
     {
         return $this->request($url, self::GET, $param, $option);
+    }
+
+    public function __destruct()
+    {
+        curl_close($this->curl);
     }
 
 }
