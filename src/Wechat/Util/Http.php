@@ -84,7 +84,7 @@ class Http
      */
     public function request($url, $method, $param, $option)
     {
-        $param = $param ? http_parse_params($param) : '';
+        $param = $param ? http_build_query($param) : '';
         switch ($method) {
             case self::GET:
                 $param && $url .= "?{$param}";
