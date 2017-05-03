@@ -96,6 +96,7 @@ class Http
         }
         curl_setopt($this->curl, CURLOPT_URL, $url);
         curl_setopt($this->curl, CURLOPT_HEADER, 0);
+        curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, 1);
         return curl_exec($this->curl);
     }
 
