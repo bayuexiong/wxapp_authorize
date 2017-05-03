@@ -108,7 +108,7 @@ class Http
      */
     public function post($url, $param = array(), $option = array())
     {
-        return $this->request($url, self::GET, $param, $option);
+        return $this->request($url, self::POST, $param, $option);
     }
 
     public function __destruct()

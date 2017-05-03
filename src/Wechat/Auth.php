@@ -59,7 +59,7 @@ class Auth
             'js_code'    => $code,
             'grant_type' => 'authorization_code',
         );
-        $res = $this->http->get(static::API_SESSION_KEY, $params)->body;
+        $res = $this->http->get(static::API_SESSION_KEY, $params);
         $data = json_decode($res, true);
         if ($data === null || !isset($data['openid'])) {
             throw new Exception('', ErrorCode::$NoGetSessionKey);
