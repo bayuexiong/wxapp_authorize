@@ -6,7 +6,7 @@
 
 ##### Get SessionKey
 
-```
+```php
 require "vendor/autoload.php";
 
 use Wxapp\Wechat\Auth;
@@ -28,7 +28,7 @@ try {
 
 ##### Decode UserInfo
 
-```
+```php
 $session_key = '';
 $encrypt_data = '';
 $iv = '';
@@ -38,12 +38,13 @@ try {
     $info = $user->decode($session_key, $encrypt_data, $iv);
     $open_id = $info['openId'];
     $union_id = $info['unionId'];
-  catch (Exception $e) {
+catch (Exception $e) {
     var_dump($e);
+}
 
 ```
 
-
 ### License
+
 wxapp_authorize is licensed under the MIT License - see the LICENSE file for details
 
